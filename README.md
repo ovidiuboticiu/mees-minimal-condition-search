@@ -96,11 +96,11 @@ See `REPRODUCIBILITY.md` and `PROVENANCE.md`.
 
 The external bridge used CausaLab causal topologies as described in the preserved project evidence. MEES defined its own shielding task and scorer. See `THIRD_PARTY_NOTICES.md`.
 
-## License and citation status
+## License and citation
 
-No open-source/content license was selected in the surviving project record, so no license has been invented during reconstruction. See `LICENSE_STATUS.md`.
+This repository is released under the **MIT License**. See `LICENSE` and `LICENSE_STATUS.md`.
 
-A formal `CITATION.cff` is also intentionally deferred until author metadata is explicitly finalized. See `CITATION.md`.
+Machine-readable citation metadata is provided in `CITATION.cff`. The current archival version is **1.0.0**; see `RELEASE_NOTES_v1.0.0.md`.
 
 ## AI assistance disclosure
 
