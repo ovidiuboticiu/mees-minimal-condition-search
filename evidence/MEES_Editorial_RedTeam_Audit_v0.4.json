@@ -1,0 +1,44 @@
+{
+  "document": "MEES editorial red-team audit v0.4",
+  "manuscript": "MEES_Manuscript_Release_Candidate_v0.4.md",
+  "items": [
+    {
+      "severity": "resolved",
+      "issue": "Potential ambiguity of 'independent concordance'",
+      "action": "Renamed to implementation-concordance check and clarified that no external-team replication occurred."
+    },
+    {
+      "severity": "resolved",
+      "issue": "Two Related Work citations remained in provisional author-year text",
+      "action": "Converted to bibliography-backed citation keys."
+    },
+    {
+      "severity": "resolved",
+      "issue": "ASAL cited only as 2024 arXiv preprint",
+      "action": "Updated bibliography to 2025 Artificial Life publication, volume 31(3), pages 368-396, DOI 10.1162/ARTL.a.8."
+    },
+    {
+      "severity": "resolved",
+      "issue": "PMLR metadata incomplete for Addanki 2020 and Choo/Shiragur 2023",
+      "action": "Added PMLR volume/page metadata."
+    },
+    {
+      "severity": "open_admin",
+      "issue": "Author metadata not supplied",
+      "action": "Keep placeholders until author explicitly chooses publication name, affiliation wording, city/country, and email."
+    },
+    {
+      "severity": "open_admin",
+      "issue": "Persistent public repository DOI/URL not yet created",
+      "action": "Repository-ready archive prepared; user must publish it through GitHub/Zenodo or another archive."
+    },
+    {
+      "severity": "open_decision",
+      "issue": "Software/data/manuscript licensing not yet selected",
+      "action": "Do not impose a license without author decision."
+    }
+  ],
+  "scientific_claim_changes": "NONE",
+  "experimental_result_changes": "NONE",
+  "status": "SCIENTIFIC/EDITORIAL PASS; administrative metadata, archive DOI, and license decision remain."
+}
