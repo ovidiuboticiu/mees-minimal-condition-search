@@ -1,0 +1,22 @@
+{
+  "experiment": "MEES-METHOD-3 strict held-out methodological benchmark",
+  "status": "preregistered before any query to the four held-out worlds",
+  "frozen_algorithm": {"file": "Generalized_MEES_v0.1_frozen.py","sha256": "26208bf1ad6ac85be3b7b8b19ce967230e6d09281b0c811991438d92500628c1"},
+  "frozen_baselines": {"file": "MEES_METHOD_baselines_freeze_v0.1.json","sha256": "2f7918bb8d85c2728fbaab50ee3d74fafe75ba830c1d7f429e7de86141038458"},
+  "heldout_worlds_sha256": "4008f2ce67afc29977e57a030c8600b96934a625bea3707e0d065d3262f98f4f",
+  "heldout_world_count": 4,
+  "query_budget_per_method_per_world": 180,
+  "primary_metrics": {
+    "classification_F1": "positive-class F1 over all 6400 configurations",
+    "minimal_positive_set_F1": "exact F1 over minimal passing binary masks at reference slice",
+    "phase_region_IoU": "IoU of the 5x5 continuous positive region on a canonical valid binary mask"
+  },
+  "preregistered_hypotheses": {
+    "H1_predictive": "Generalized MEES mean classification_F1 >= 0.80",
+    "H2_structural": "Generalized MEES mean minimal_positive_set_F1 >= 0.80",
+    "H3_phase": "Generalized MEES mean phase_region_IoU >= 0.90",
+    "H4_relative": "Generalized MEES mean structural_score = .55*minimal_set_F1 + .45*phase_IoU exceeds the best frozen baseline by >= 0.15"
+  },
+  "verdict_rule": "PASS only if H1-H4 all pass.",
+  "important_scope": "Only validates this factorable non-monotone benchmark family; does not establish general causal-discovery superiority."
+}
