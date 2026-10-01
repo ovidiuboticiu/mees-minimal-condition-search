@@ -1,5 +1,9 @@
-# Citation status
+# Citation
 
-A formal `CITATION.cff` is intentionally not fabricated during reconstruction because the surviving release audit lists author identity/affiliation metadata and persistent archive metadata as unresolved publication inputs.
+Machine-readable citation metadata is provided in `CITATION.cff`.
 
-Until those metadata are explicitly finalized, cite the repository by its GitHub URL, repository title, and the release/commit you used.
+Suggested citation:
+
+> Ovidiu Boticiu. *MEES — Minimal Epistemic Ecology Search*. Version 1.0.0, 2026. GitHub repository: `ovidiuboticiu/mees-minimal-condition-search`.
+
+A DOI is not required for this archival GitHub release. If one is added later, the DOI-bearing citation may be used instead.
