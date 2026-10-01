@@ -1,0 +1,49 @@
+{
+  "document": "MEES Submission Release Candidate QA v0.4",
+  "date": "2026-08-09",
+  "manuscript": "MEES_Manuscript_Release_Candidate_v0.4.md",
+  "manuscript_sha256": "e9c773fe3ba09ba59caf1f5b061b0a3de2207b7446fcd943ab3005cb4209846b",
+  "pdf": "MEES_Artificial_Life_Release_Candidate_v0.4.pdf",
+  "pdf_sha256": "55a4709b872cdc99aae3d1dd487c186462d9af310e27e5197759f016c1509b9c",
+  "pdf_pages": 26,
+  "pdf_visual_review": "PASS — all 26 pages rendered and inspected; no clipping, overlap, or missing glyphs observed.",
+  "bibliography": "MEES_references_v0.4.bib",
+  "bibliography_sha256": "0cc4fe17e93a87bd18b47ffd32a75c8201b45dfa0bba4983369db1285707ec6a",
+  "unresolved_citation_keys": "NONE",
+  "provisional_author_year_citations": "NONE",
+  "word_count": 6044,
+  "abstract_word_count": 245,
+  "scientific_claim_changes_since_v0.3": "NONE",
+  "experimental_result_changes_since_v0.3": "NONE",
+  "editorial_changes": [
+    "Independent-concordance wording changed to implementation-concordance to avoid implying external-team replication.",
+    "Related-work citation formatting normalized.",
+    "ASAL bibliography updated to the 2025 Artificial Life publication.",
+    "PMLR metadata completed for core intervention-design references."
+  ],
+  "public_repository_ready_zip": "MEES_Public_Repository_Ready_v1.0.zip",
+  "public_repository_ready_zip_sha256": "a1bbbef6332909cd7eaf5377af178abaed6aae0d1e3a5f80a393198adf450693",
+  "outstanding": [
+    {
+      "item": "Author identity",
+      "status": "REQUIRES AUTHOR INPUT",
+      "needed": "Publication name, affiliation wording, city/country, corresponding email; ORCID optional."
+    },
+    {
+      "item": "License",
+      "status": "REQUIRES AUTHOR DECISION",
+      "needed": "Choose license(s) for software, manuscript/figures, and data/results before public release."
+    },
+    {
+      "item": "Persistent archive",
+      "status": "REQUIRES ACCOUNT ACTION",
+      "needed": "Publish repository and archive a release (recommended GitHub + Zenodo), then insert DOI/URL in manuscript."
+    },
+    {
+      "item": "Final submission PDF",
+      "status": "BLOCKED ONLY BY ABOVE METADATA",
+      "needed": "Regenerate after author metadata and DOI are inserted."
+    }
+  ],
+  "status": "SCIENTIFIC AND EDITORIAL RELEASE CANDIDATE PASS; only author/admin publication actions remain."
+}
