@@ -1,8 +1,14 @@
 {
   "experiment": "MEES-METHOD-3 strict held-out methodological benchmark",
   "status": "preregistered before any query to the four held-out worlds",
-  "frozen_algorithm": {"file": "Generalized_MEES_v0.1_frozen.py","sha256": "26208bf1ad6ac85be3b7b8b19ce967230e6d09281b0c811991438d92500628c1"},
-  "frozen_baselines": {"file": "MEES_METHOD_baselines_freeze_v0.1.json","sha256": "2f7918bb8d85c2728fbaab50ee3d74fafe75ba830c1d7f429e7de86141038458"},
+  "frozen_algorithm": {
+    "file": "Generalized_MEES_v0.1_frozen.py",
+    "sha256": "26208bf1ad6ac85be3b7b8b19ce967230e6d09281b0c811991438d92500628c1"
+  },
+  "frozen_baselines": {
+    "file": "MEES_METHOD_baselines_freeze_v0.1.json",
+    "sha256": "2f7918bb8d85c2728fbaab50ee3d74fafe75ba830c1d7f429e7de86141038458"
+  },
   "heldout_worlds_sha256": "4008f2ce67afc29977e57a030c8600b96934a625bea3707e0d065d3262f98f4f",
   "heldout_world_count": 4,
   "query_budget_per_method_per_world": 180,
