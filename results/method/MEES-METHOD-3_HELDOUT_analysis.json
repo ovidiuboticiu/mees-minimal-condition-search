@@ -1,0 +1,15 @@
+{
+  "experiment": "MEES-METHOD-3 strict held-out methodological benchmark",
+  "generalized_mees_mean_classification_F1": 0.5049586849671739,
+  "generalized_mees_mean_minimal_set_F1": 0.8016018306636156,
+  "generalized_mees_mean_phase_IoU": 0.5454545454545454,
+  "generalized_mees_structural_score": 0.686335552319534,
+  "best_baseline_structural_score": 0.42101398601398604,
+  "structural_advantage": 0.265321566305548,
+  "H1_pass": false,
+  "H2_pass": true,
+  "H3_pass": false,
+  "H4_pass": true,
+  "overall_verdict": "FAIL/NOT-CONCORDANT",
+  "results_sha256": "a21a343316337b2721a0dec88830c8f524fc83e1c9b4d0b76b6f81d205546e60"
+}
