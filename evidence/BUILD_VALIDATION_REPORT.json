@@ -1,0 +1,56 @@
+{
+  "status": "REPRODUCTION_PASS",
+  "environment": {
+    "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.41"
+  },
+  "elapsed_seconds": 19.40223789215088,
+  "checks": {
+    "evidence_ledger": {
+      "pass": true,
+      "verdicts": {
+        "MEES-METHOD-3_HELDOUT_analysis.json": "FAIL/NOT-CONCORDANT",
+        "MEES-METHOD-4_HELDOUT_analysis.json": "FAIL/NOT-CONCORDANT",
+        "MEES-METHOD-5_HELDOUT_analysis.json": "FAIL/NOT-CONCORDANT",
+        "MEES-METHOD-6_HELDOUT_analysis.json": "PASS",
+        "MEES-EXT-1_analysis.json": "FAIL/NOT-CONCORDANT",
+        "MEES-EXT-2_analysis.json": "FAIL/NOT-CONCORDANT",
+        "MEES-EXT-3_analysis.json": "PASS"
+      }
+    },
+    "METHOD6": {
+      "pass": true,
+      "semantic_match_reference": true,
+      "max_numeric_diff": 1.1102230246251565e-16,
+      "world_sha256": "ed9a12762bd87dee9928a6486725ef66eb5a31922aa30c38e537670dda12a5e0",
+      "metrics": {
+        "mean_minimal_set_F1": 0.9669108669108668,
+        "mean_substitution_F1": 0.9800000000000001,
+        "mean_boundary_MAE": 0.0,
+        "mean_classification_F1": 0.9807161125319693,
+        "mean_queries": 159.5,
+        "structural_advantage": 0.15870976849237706,
+        "worst_minimal_set_F1": 0.8571428571428571,
+        "worst_substitution_F1": 0.8
+      },
+      "output_file": "output/METHOD6_reproduced.csv"
+    },
+    "EXT3": {
+      "pass": true,
+      "semantic_match_reference": true,
+      "max_numeric_diff": 1.1102230246251565e-16,
+      "metrics": {
+        "mean_minimal_set_F1": 0.9800000000000001,
+        "pooled_substitution_precision": 1.0,
+        "pooled_substitution_recall": 0.875,
+        "pooled_substitution_F1": 0.9333333333333333,
+        "best_baseline_mean_minimal_set_F1": 0.5452380952380953,
+        "minimal_set_advantage": 0.4347619047619048,
+        "mean_queries": 19.1
+      },
+      "snapshot": "external/causalab_ext3_selected_snapshot.json",
+      "output_file": "output/EXT3_reproduced_summary.csv"
+    }
+  },
+  "note": "Builder-side validation only. A user reproduction should generate a new output/REPRODUCTION_REPORT.json."
+}
