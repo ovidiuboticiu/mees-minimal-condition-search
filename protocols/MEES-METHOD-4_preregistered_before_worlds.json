@@ -9,8 +9,19 @@
     "MEES_METHOD_baselines_v0.2_frozen.py": "2756bf162421e5f885fc1e2cdfcab444a61c2584016774f77e054e074f2283b9",
     "MEES_METHOD4_world_generator_frozen.py": "c2c389a80f6c29ce4148980c100ce3fb1b60c8bdba416c3a52d53bf9735ac8ee"
   },
-  "query_model": {"batch_replicates": 5,"P_batch_trial_positive_given_true": 0.95,"P_batch_trial_positive_given_false": 0.05,"max_batch_queries_per_method_per_world": 180},
-  "generalized_mees_v0.2": {"structural_query_target": 140,"max_anchor_candidates": 5,"independent_confirmation_batches": 3,"confirmation_rule": ">=2/3 positive","phase_map": "fresh batch on all 25 cells"},
+  "query_model": {
+    "batch_replicates": 5,
+    "P_batch_trial_positive_given_true": 0.95,
+    "P_batch_trial_positive_given_false": 0.05,
+    "max_batch_queries_per_method_per_world": 180
+  },
+  "generalized_mees_v0.2": {
+    "structural_query_target": 140,
+    "max_anchor_candidates": 5,
+    "independent_confirmation_batches": 3,
+    "confirmation_rule": ">=2/3 positive",
+    "phase_map": "fresh batch on all 25 cells"
+  },
   "primary_metrics": {
     "classification_F1": "positive-class F1 over all 6400 configurations",
     "minimal_positive_set_F1": "exact F1 over antichain-minimal positive binary masks at reference slice",
@@ -25,6 +36,6 @@
     "H5_anchor": "at least 5/6 selected anchors are true binary positives under hidden ground truth"
   },
   "verdict_rule": "PASS only if H1-H5 all pass.",
-  "scope": "Factorable binary-design × continuous-phase benchmark family; not arbitrary causal systems.",
+  "scope": "Factorable binary-design \u00d7 continuous-phase benchmark family; not arbitrary causal systems.",
   "stop_rule": "If v0.2 fails overall, do not tune on METHOD-4; restrict the methodological claim or build a separately motivated v0.3 only with a new future holdout."
 }
