@@ -8,7 +8,7 @@ MEES is a completed research project investigating a bounded question: given an 
 
 **Completed / archival research release.** The strongest supported claim is deliberately restricted to a bounded **monotone/factorizable minimal-condition** problem class. Broad non-monotone generalization was tested and **not confirmed**.
 
-This repository is reconstructed from the surviving `Experiment_02.zip` project archive. It preserves the frozen code, protocols, key results, negative evidence, claim-boundary documents, release-candidate manuscript, and publication audit available in that archive.
+This repository was reconstructed from the surviving `Experiment_02.zip` project archive. It preserves the frozen algorithm files that remain in that archive, key preregistration/freeze records, final result summaries, negative evidence, publication audits, and provenance documentation.
 
 ## Main results
 
@@ -37,68 +37,71 @@ The final external structural bridge, EXT-3, reports:
 
 ## Retained negative evidence
 
-The repository intentionally keeps failed confirmatory stages:
+The repository intentionally retains the failed confirmatory stages:
 
 - METHOD-3 — `FAIL/NOT-CONCORDANT`
 - METHOD-4 — `FAIL/NOT-CONCORDANT`
 - METHOD-5 — `FAIL/NOT-CONCORDANT`
-- EXT-1 and EXT-2 are recorded in the historical evidence ledgers as failed external stages.
 
-Those failures are part of the empirical scope definition, not discarded pilot noise.
+The historical validation ledger also records EXT-1 and EXT-2 as failed external stages. Those failures are part of the empirical scope definition, not discarded pilot noise.
 
 ## What MEES does **not** claim
 
-This repository does **not** support claims that:
+The frozen release record explicitly rejects claims that:
 
 - MEES is a generally superior causal-discovery algorithm;
 - non-monotone MEES generalization is confirmed;
 - MEES passed the native CausaLab benchmark;
 - the candidate functional invariants are universal laws;
-- the individual algorithmic components are unprecedented.
+- the overall framework is entirely unprecedented.
 
-See `evidence/MEES_Manuscript_Release_v1.0.json` and the manuscript for the frozen claim boundary.
+See `evidence/MEES_Manuscript_Release_v1.0.json`.
 
 ## Repository map
 
-- `code/` — surviving frozen MEES implementations.
-- `protocols/` — surviving pre-specified/hash-frozen protocols for key confirmatory stages.
-- `results/method/` — METHOD-1 through METHOD-6 evidence used to establish the final scope.
-- `results/external/` — surviving EXT-3 external-bridge results and concordance check.
-- `evidence/` — checkpoints, ledgers, claim freezes, validation report, and editorial red-team audit.
-- `figures/` — surviving final-result figures from the source archive.
-- `manuscript/` — release-candidate manuscript and PDF preserved as historical artifacts.
-- `archive/` — provenance index plus the historical reproducibility-package manifest.
-- `scripts/` — repository-level integrity and evidence checks added during public reconstruction.
+- `code/` — surviving frozen MEES algorithm implementations.
+- `protocols/` — surviving preregistration/freeze records for key confirmatory stages.
+- `results/method/` — METHOD-3 through METHOD-6 analysis evidence and the final comparison table.
+- `results/external/` — EXT-3 analysis, comparison table, and concordance check.
+- `evidence/` — historical builder-side validation and publication/release audits.
+- `docs/` — AI-assistance disclosure.
+- `scripts/` — lightweight evidence checks for this reconstructed repository.
+- `PROVENANCE.md` and `REPRODUCIBILITY.md` — what is preserved, what is missing, and what can honestly be verified.
 
 ## Verification
 
-From the repository root:
+Install the minimal Python dependencies if you want to inspect/compile the frozen source:
+
+```bash
+pip install -r requirements.txt
+```
+
+Check the preserved headline evidence:
 
 ```bash
 python scripts/check_key_results.py
-python scripts/verify_repository.py
 ```
 
-The first command checks the frozen verdicts and headline metrics against the preserved JSON evidence. The second checks SHA-256 hashes for all files listed in `MANIFEST_SHA256.json`.
+The check validates the retained METHOD-3/4/5 failures, METHOD-6 PASS and headline metrics, EXT-3 PASS and headline metrics, and the CausaLab guardrail.
 
 ### Important reproducibility limitation
 
-The surviving source archive contains `package_manifest.json` and an August 2026 build report for an earlier full reproducibility package, but it does **not** contain that complete package itself. In particular, some world snapshots and reproduction scripts named in the historical manifest are absent from `Experiment_02.zip`.
+The surviving source archive contains historical records showing that a fuller reproducibility package passed a builder-side reproduction in August 2026. However, the complete package itself is **not present** in the supplied `Experiment_02.zip`; some generated/hidden inputs and dedicated reproduction scripts referenced by that historical package are absent.
 
-Therefore this reconstructed repository supports **evidence-level verification, provenance checking, code inspection, and preservation of the frozen results**, but it does **not** claim a fresh end-to-end reproduction of METHOD-6/EXT-3 from all original hidden/generated inputs. See `REPRODUCIBILITY.md`.
+Therefore this reconstructed repository supports **evidence-level verification, provenance checking, frozen-code inspection, and preservation of the reported results**. It does **not** claim that a fresh end-to-end reproduction of METHOD-6 or EXT-3 has been executed from this reconstructed repository.
 
-## Manuscript
-
-The release-candidate manuscript is preserved under `manuscript/`. Its Markdown references two figure assets that are not present in the surviving archive; the preserved PDF is the more complete historical rendering.
+See `REPRODUCIBILITY.md` and `PROVENANCE.md`.
 
 ## Third-party context
 
-The external bridge used CausaLab causal topologies as described in the project evidence. MEES's shielding task and scorer were separately defined. See `THIRD_PARTY_NOTICES.md` and the manuscript for the distinction.
+The external bridge used CausaLab causal topologies as described in the preserved project evidence. MEES defined its own shielding task and scorer. See `THIRD_PARTY_NOTICES.md`.
 
-## License status
+## License and citation status
 
-No open-source/content license has been selected in the surviving project record. The repository is made available for inspection and archival transparency; see `LICENSE_STATUS.md` before reusing code, data, text, or figures.
+No open-source/content license was selected in the surviving project record, so no license has been invented during reconstruction. See `LICENSE_STATUS.md`.
+
+A formal `CITATION.cff` is also intentionally deferred until author metadata is explicitly finalized. See `CITATION.md`.
 
 ## AI assistance disclosure
 
-The surviving project includes an explicit AI-assistance disclosure under `docs/MEES_AI_Disclosure_v0.1.md`.
+The surviving project includes an explicit disclosure under `docs/MEES_AI_Disclosure_v0.1.md`.
