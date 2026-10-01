@@ -76,6 +76,9 @@ class Ledger:
         return len(self.order)
 
 def fit_monotone_boundary(obs):
+    # obs[xi,yi] in {0,1}; threshold t_y in {0..5}.
+    # Pattern is 0 below threshold, 1 at/above it.
+    # Positive slope => threshold cannot increase with y.
     cost=np.zeros((5,6),dtype=int)
     for yi in range(5):
         for t in range(6):
@@ -88,7 +91,7 @@ def fit_monotone_boundary(obs):
 
     for yi in range(1,5):
         for t in range(6):
-            candidates=range(t,6)
+            candidates=range(t,6)  # previous threshold >= current
             best=None
             bestv=10**9
             for tp in candidates:
@@ -124,6 +127,7 @@ def run_monotone_mees(query_fn,seed):
     no_new=0
     attempts=0
 
+    # Reserve 50 queries before substitution/phase stages.
     while led.n<MAX_BUDGET-50 and attempts<56 and no_new<14:
         attempts+=1
         m=full
@@ -165,6 +169,7 @@ def run_monotone_mees(query_fn,seed):
 
     substitution_pairs |= substitution_pairs_from_sets(discovered)
 
+    # Full 5x5 phase map on the guaranteed-valid full binary design.
     obs=np.zeros((5,5),dtype=int)
     for xi in range(5):
         for yi in range(5):
@@ -179,6 +184,7 @@ def run_monotone_mees(query_fn,seed):
         "status":"ok"
     }
 
+# Frozen baseline definitions are retained from METHOD-5 for direct comparability.
 def _fit_rf(indices,labels,seed,trees):
     clf=RandomForestClassifier(
         n_estimators=trees,min_samples_leaf=2,class_weight="balanced",
