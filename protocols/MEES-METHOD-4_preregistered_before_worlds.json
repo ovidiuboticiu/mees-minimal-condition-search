@@ -1,0 +1,30 @@
+{
+  "experiment": "MEES-METHOD-4 strict held-out methodological benchmark",
+  "status": "FROZEN BEFORE HELD-OUT WORLD GENERATION",
+  "freeze_local_time": "2026-08-09T13:39:00+03:00",
+  "heldout_generation_seed": 202608091339,
+  "heldout_world_count": 6,
+  "frozen_files": {
+    "Generalized_MEES_v0.2_frozen.py": "99ac00f3028f2817b5cbdf1ee8742ac0a9cc7d0cc0a0d51cd0354e70979e7251",
+    "MEES_METHOD_baselines_v0.2_frozen.py": "2756bf162421e5f885fc1e2cdfcab444a61c2584016774f77e054e074f2283b9",
+    "MEES_METHOD4_world_generator_frozen.py": "c2c389a80f6c29ce4148980c100ce3fb1b60c8bdba416c3a52d53bf9735ac8ee"
+  },
+  "query_model": {"batch_replicates": 5,"P_batch_trial_positive_given_true": 0.95,"P_batch_trial_positive_given_false": 0.05,"max_batch_queries_per_method_per_world": 180},
+  "generalized_mees_v0.2": {"structural_query_target": 140,"max_anchor_candidates": 5,"independent_confirmation_batches": 3,"confirmation_rule": ">=2/3 positive","phase_map": "fresh batch on all 25 cells"},
+  "primary_metrics": {
+    "classification_F1": "positive-class F1 over all 6400 configurations",
+    "minimal_positive_set_F1": "exact F1 over antichain-minimal positive binary masks at reference slice",
+    "phase_region_IoU": "IoU of 5x5 continuous positive region on factorized phase map"
+  },
+  "structural_score": ".55*minimal_positive_set_F1 + .45*phase_region_IoU",
+  "preregistered_hypotheses": {
+    "H1_predictive": "Generalized MEES v0.2 mean classification_F1 >= 0.80",
+    "H2_structural": "Generalized MEES v0.2 mean minimal_positive_set_F1 >= 0.80",
+    "H3_phase": "Generalized MEES v0.2 mean phase_region_IoU >= 0.90",
+    "H4_relative": "Generalized MEES v0.2 mean structural_score exceeds best frozen baseline by >= 0.15",
+    "H5_anchor": "at least 5/6 selected anchors are true binary positives under hidden ground truth"
+  },
+  "verdict_rule": "PASS only if H1-H5 all pass.",
+  "scope": "Factorable binary-design × continuous-phase benchmark family; not arbitrary causal systems.",
+  "stop_rule": "If v0.2 fails overall, do not tune on METHOD-4; restrict the methodological claim or build a separately motivated v0.3 only with a new future holdout."
+}
