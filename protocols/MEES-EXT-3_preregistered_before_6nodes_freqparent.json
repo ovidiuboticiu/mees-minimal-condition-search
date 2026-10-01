@@ -1,0 +1,49 @@
+{
+  "experiment": "MEES-EXT-3 external structural bridge on untouched CausaLab 6nodes_freqparent suite",
+  "status": "PREREGISTERED BEFORE INSPECTING ANY 6nodes_freqparent.jsonl RECORD",
+  "development_history": [
+    "EXT-1 FAIL exposed uncertified-minimum bug.",
+    "v1.1 minimality certification was frozen before EXT-2.",
+    "EXT-2 FAIL only H2 under mean-per-applicable-graph substitution F1; post-hoc pooled pair F1 was 0.923077.",
+    "EXT-1 and EXT-2 remain FAIL and are not re-scored."
+  ],
+  "external_source": {
+    "benchmark": "CausaLab-Benchmark",
+    "paper": "arXiv:2605.26029",
+    "suite": "causal_graph_configs/6nodes_freqparent.jsonl",
+    "record_selection_indices": [3,8,13,18,23,28,33,38,43,48],
+    "selection_rule": "fixed 10 indices committed before opening any record in this suite"
+  },
+  "task_definition": {
+    "target": "resonanceFreq",
+    "candidate_nodes": "all non-target nodes with is_controllable=true and observable=true",
+    "disturbance_roots": "candidate nodes with graph indegree zero that have a directed path to target",
+    "positive_mask": "removing/fixing selected candidates destroys every directed path from every unselected disturbance root to target",
+    "ground_truth": "all inclusion-minimal positive masks",
+    "note": "target may have outgoing edges in FreqParent; only directed paths INTO the target define shielding."
+  },
+  "algorithm": {"file": "MEES_EXTERNAL_STRUCTURE_v1.1_frozen.py","sha256": "26037e1fab76ae082b067204b5571abc914ce0e6b109eb78befb4d64704f07d8"},
+  "budget_rule": "native record intervention budget, capped at 2^n masks",
+  "methods": ["MEES_Structure_v1.1","RandomSampling","SingleAblation"],
+  "metrics": {
+    "minimal_sets": "per-record exact-set F1, averaged across 10 records",
+    "substitutions": "pooled pair precision, recall, and F1 across all records with graph_id namespace",
+    "efficiency": "queries vs native budget"
+  },
+  "preregistered_hypotheses": {
+    "H1_minimal": "MEES mean minimal_set_F1 >= 0.80",
+    "H2_substitution_pooled": "MEES pooled substitution F1 >= 0.80",
+    "H3_substitution_precision": "MEES pooled substitution precision >= 0.90",
+    "H4_substitution_recall": "MEES pooled substitution recall >= 0.75",
+    "H5_relative": "MEES mean minimal_set_F1 exceeds best baseline by >= 0.15",
+    "H6_efficiency": "MEES never exceeds native intervention budget",
+    "H7_worst": "MEES minimal_set_F1 >= 0.50 on at least 8 of 10 records"
+  },
+  "verdict_rule": "PASS only if H1-H7 all pass.",
+  "stop_rule": "If EXT-3 fails, do not tune on this suite and reuse it for confirmation.",
+  "interpretation_guardrails": [
+    "This remains a derived structural bridge, not native CausaLab graph-recovery scoring.",
+    "A PASS would support external transfer of minimal-set/substitution search only.",
+    "A PASS would not validate phase mapping or general causal discovery."
+  ]
+}
