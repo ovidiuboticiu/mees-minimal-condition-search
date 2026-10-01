@@ -11,7 +11,18 @@
     "benchmark": "CausaLab-Benchmark",
     "paper": "arXiv:2605.26029",
     "suite": "causal_graph_configs/6nodes_freqparent.jsonl",
-    "record_selection_indices": [3,8,13,18,23,28,33,38,43,48],
+    "record_selection_indices": [
+      3,
+      8,
+      13,
+      18,
+      23,
+      28,
+      33,
+      38,
+      43,
+      48
+    ],
     "selection_rule": "fixed 10 indices committed before opening any record in this suite"
   },
   "task_definition": {
@@ -22,9 +33,16 @@
     "ground_truth": "all inclusion-minimal positive masks",
     "note": "target may have outgoing edges in FreqParent; only directed paths INTO the target define shielding."
   },
-  "algorithm": {"file": "MEES_EXTERNAL_STRUCTURE_v1.1_frozen.py","sha256": "26037e1fab76ae082b067204b5571abc914ce0e6b109eb78befb4d64704f07d8"},
+  "algorithm": {
+    "file": "MEES_EXTERNAL_STRUCTURE_v1.1_frozen.py",
+    "sha256": "26037e1fab76ae082b067204b5571abc914ce0e6b109eb78befb4d64704f07d8"
+  },
   "budget_rule": "native record intervention budget, capped at 2^n masks",
-  "methods": ["MEES_Structure_v1.1","RandomSampling","SingleAblation"],
+  "methods": [
+    "MEES_Structure_v1.1",
+    "RandomSampling",
+    "SingleAblation"
+  ],
   "metrics": {
     "minimal_sets": "per-record exact-set F1, averaged across 10 records",
     "substitutions": "pooled pair precision, recall, and F1 across all records with graph_id namespace",
