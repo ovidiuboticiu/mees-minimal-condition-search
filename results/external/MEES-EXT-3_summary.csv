@@ -1,0 +1,4 @@
+method,mean_queries,mean_minimal_set_F1,worst_minimal_set_F1,pooled_substitution_precision,pooled_substitution_recall,pooled_substitution_F1,gt_pair_count,pred_pair_count,correct_pair_count
+MEES_Structure_v1.1,19.1,0.9800000000000001,0.8,1.0,0.875,0.9333333333333333,8,7,7
+RandomSampling,20.0,0.5452380952380953,0.0,0.21052631578947367,0.5,0.2962962962962963,8,19,4
+SingleAblation,6.0,0.4,0.0,0.0,0.0,0.0,8,0,0
