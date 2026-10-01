@@ -62,6 +62,7 @@ def run_generalized_mees(query_fn, seed):
     y=[]
     seen=set()
 
+    # Hamming-stratified initial exploration.
     for h in range(N_BITS+1):
         ms=MASKS[BITS.sum(axis=1)==h]
         for _ in range(min(3,len(ms))):
@@ -78,33 +79,45 @@ def run_generalized_mees(query_fn, seed):
             queried.append(m)
             y.append(ask(m,*center))
 
+    # Active search + symmetric one-bit interventions.
     while len(queried)<100:
         clf=RandomForestClassifier(
-            n_estimators=180,min_samples_leaf=1,class_weight="balanced",
-            random_state=100+seed,n_jobs=-1,max_depth=8)
+            n_estimators=180,
+            min_samples_leaf=1,
+            class_weight="balanced",
+            random_state=100+seed,
+            n_jobs=-1,
+            max_depth=8
+        )
         clf.fit(BITS[queried],y)
         proba=clf.predict_proba(BITS)
         if len(clf.classes_)<2:
             uncertainty=np.ones(256)
         else:
-            uncertainty=np.abs(proba[:,list(clf.classes_).index(1)]-.5)
+            uncertainty=np.abs(
+                proba[:,list(clf.classes_).index(1)]-.5
+            )
+
         batch=[]
         positives=[m for m,v in zip(queried,y) if v==1]
         local=[]
         for pm in positives:
             local.extend(_neighbors(pm))
         rng.shuffle(local)
+
         for m in local:
             if m not in seen and m not in batch:
                 batch.append(int(m))
                 if len(batch)>=5:
                     break
+
         for m in np.argsort(uncertainty):
             m=int(m)
             if m not in seen and m not in batch:
                 batch.append(m)
                 if len(batch)>=10:
                     break
+
         for m in batch:
             seen.add(m)
             queried.append(m)
@@ -112,13 +125,20 @@ def run_generalized_mees(query_fn, seed):
             if len(queried)>=100:
                 break
 
+    # Interrogate predicted minimal positives and their symmetric neighbors.
     while len(queried)<BINARY_TARGET:
         clf=RandomForestClassifier(
-            n_estimators=260,min_samples_leaf=1,class_weight="balanced",
-            random_state=101+seed,n_jobs=-1,max_depth=10)
+            n_estimators=260,
+            min_samples_leaf=1,
+            class_weight="balanced",
+            random_state=101+seed,
+            n_jobs=-1,
+            max_depth=10
+        )
         clf.fit(BITS[queried],y)
         pred=clf.predict(BITS).astype(int)
         predicted_min=_antichain([m for m in MASKS if pred[m]==1])
+
         candidates=[]
         for pm in predicted_min:
             candidates.append(pm)
@@ -126,6 +146,7 @@ def run_generalized_mees(query_fn, seed):
         for pm,v in zip(queried,y):
             if v==1:
                 candidates.extend(_neighbors(pm))
+
         added=False
         for m in candidates:
             m=int(m)
@@ -136,6 +157,7 @@ def run_generalized_mees(query_fn, seed):
                 added=True
                 if len(queried)>=BINARY_TARGET:
                     break
+
         if not added:
             proba=clf.predict_proba(BITS)
             if len(clf.classes_)==2:
@@ -153,12 +175,19 @@ def run_generalized_mees(query_fn, seed):
         if not added:
             break
 
+    # Frozen binary surrogate.
     clf=RandomForestClassifier(
-        n_estimators=500,min_samples_leaf=1,class_weight="balanced",
-        random_state=102+seed,n_jobs=-1,max_depth=None)
+        n_estimators=500,
+        min_samples_leaf=1,
+        class_weight="balanced",
+        random_state=102+seed,
+        n_jobs=-1,
+        max_depth=None
+    )
     clf.fit(BITS[queried],y)
     binary_prediction=clf.predict(BITS).astype(np.int8)
 
+    # Explicit phase-region mapping on a confirmed positive binary anchor.
     positives=[m for m,v in zip(queried,y) if v==1]
     if positives:
         anchor=min(positives,key=lambda m:(int(m).bit_count(),m))
