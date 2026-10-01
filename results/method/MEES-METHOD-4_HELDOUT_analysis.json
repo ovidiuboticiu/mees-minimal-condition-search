@@ -1,0 +1,22 @@
+{
+  "experiment": "MEES-METHOD-4 strict held-out methodological benchmark",
+  "generalized_mees": {
+    "mean_classification_F1": 0.8518294108589904,
+    "mean_minimal_set_F1": 0.795128626163109,
+    "mean_phase_IoU": 1.0,
+    "structural_score": 0.88732074438971,
+    "mean_queries": 168.0,
+    "true_anchors": 6,
+    "total_anchors": 6
+  },
+  "best_baseline_structural_score": 0.268962148962149,
+  "structural_advantage": 0.618358595427561,
+  "H1_pass": true,
+  "H2_pass": false,
+  "H3_pass": true,
+  "H4_pass": true,
+  "H5_pass": true,
+  "overall_verdict": "FAIL/NOT-CONCORDANT",
+  "results_sha256": "8b65e4163d20fb8e415365bfceae7eeb031809afb4e9eccf354c01791f21a806",
+  "summary_sha256": "d6b36cc29e77de0fea8c3d90be4caf7a2d66c4d5c209023e983b61b02caef080"
+}
