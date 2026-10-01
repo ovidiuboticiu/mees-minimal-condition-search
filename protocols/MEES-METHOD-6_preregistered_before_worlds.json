@@ -2,13 +2,25 @@
   "experiment": "MEES-METHOD-6 strict re-confirmation of restricted monotone/factorizable claim",
   "status": "PREREGISTERED BEFORE HELD-OUT WORLD GENERATION",
   "development_history": "v1.1 was motivated by METHOD-5 failure; METHOD-5 remains FAIL and is development-only for v1.1.",
-  "frozen_algorithm": {"file": "Monotone_MEES_v1.1_frozen.py","sha256": "171c24a9bbc466674670e985449438134790883f08e650955b81ac055c70ea21"},
-  "frozen_generator": {"file": "MEES-METHOD-6_world_generator_frozen.py","sha256": "0b5c3d25f260b80da718b2af873c72823c8b25cf7d933c7c43b047c7181a015b","seed": 202608091406},
+  "frozen_algorithm": {
+    "file": "Monotone_MEES_v1.1_frozen.py",
+    "sha256": "171c24a9bbc466674670e985449438134790883f08e650955b81ac055c70ea21"
+  },
+  "frozen_generator": {
+    "file": "MEES-METHOD-6_world_generator_frozen.py",
+    "sha256": "0b5c3d25f260b80da718b2af873c72823c8b25cf7d933c7c43b047c7181a015b",
+    "seed": 202608091406
+  },
   "world_count": 10,
   "problem_class": "identical constraints to METHOD-5: 8 bits; 3-4 disjoint OR-groups; 2..12 minimal sets; >=2 substitution pairs; factorable monotone threshold x+slope*y>=theta; 5..20 positive phase cells.",
   "query_model": "identical to METHOD-5: p=.95/.05, 5 replicates per config query, deterministic same oracle across methods.",
   "budget": 180,
-  "methods": ["MonotoneMEES_v1.1","ActivePhaseOnly","Uniform/Grid","CausalAblationOnly"],
+  "methods": [
+    "MonotoneMEES_v1.1",
+    "ActivePhaseOnly",
+    "Uniform/Grid",
+    "CausalAblationOnly"
+  ],
   "criteria_carried_forward_unchanged": {
     "H1_minimal_sets": "mean minimal_set_F1 >= 0.90",
     "H2_substitutions": "mean substitution_F1 >= 0.90",
