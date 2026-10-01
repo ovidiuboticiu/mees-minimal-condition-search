@@ -14,8 +14,7 @@ This release closes the reconstructed MEES repository as a transparent archival 
 - project provenance and reproducibility limitations;
 - publication/release audits preserved from the original archive;
 - explicit AI-assistance disclosure;
-- MIT software license;
-- CC BY 4.0 license for original non-software project content;
+- MIT license;
 - citation metadata.
 
 ## Scientific scope
