@@ -1,0 +1,20 @@
+{
+  "experiment": "MEES-EXT-3 external structural bridge on CausaLab 6nodes_freqparent",
+  "overall_verdict": "PASS",
+  "MEES_mean_minimal_set_F1": 0.9800000000000001,
+  "MEES_pooled_substitution_F1": 0.9333333333333333,
+  "MEES_pooled_substitution_precision": 1.0,
+  "MEES_pooled_substitution_recall": 0.875,
+  "best_baseline_mean_minimal_set_F1": 0.5452380952380953,
+  "minimal_set_advantage": 0.4347619047619048,
+  "MEES_mean_queries": 19.1,
+  "H1_pass": true,
+  "H2_pass": true,
+  "H3_pass": true,
+  "H4_pass": true,
+  "H5_pass": true,
+  "H6_pass": true,
+  "H7_pass": true,
+  "guardrail": "Derived external structural bridge, not native CausaLab graph-recovery scoring.",
+  "results_sha256": "9b5849105be6b9865c17f6ba9cff925b86f5acb670d91335a7177ffc9fbee857"
+}
