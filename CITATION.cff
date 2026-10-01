@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it."
+title: "MEES — Minimal Epistemic Ecology Search"
+type: software
+authors:
+  - family-names: "Boticiu"
+    given-names: "Ovidiu"
+repository-code: "https://github.com/ovidiuboticiu/mees-minimal-condition-search"
+url: "https://github.com/ovidiuboticiu/mees-minimal-condition-search"
+version: "1.0.0"
+date-released: "2026-10-01"
+license: MIT
+keywords:
+  - minimal-condition search
+  - artificial ecologies
+  - ablation
+  - functional substitution
+  - phase boundary
+  - reproducibility
+abstract: >-
+  Archival research release of MEES, a bounded minimal-condition search
+  framework evaluated on monotone/factorizable artificial systems, with
+  retained negative results and a derived external structural bridge.
