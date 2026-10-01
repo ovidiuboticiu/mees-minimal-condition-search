@@ -1,0 +1,8 @@
+{
+  "ground_truth_exact_concordance_all_10": true,
+  "independent_mean_minimal_set_F1": 0.9800000000000001,
+  "independent_pooled_substitution_precision": 1.0,
+  "independent_pooled_substitution_recall": 0.875,
+  "independent_pooled_substitution_F1": 0.9333333333333333,
+  "independent_mean_queries": 19.1
+}
