@@ -1,14 +1,20 @@
 # MEES — Minimal Epistemic Ecology Search
 
-**Minimal-condition search in artificial ecologies, with retained failures and frozen held-out evaluation.**
+**A completed experimental search for the smallest conditions under which a target behavior appears, disappears, or can be reproduced by substitutes.**
 
-MEES is a completed research project investigating a bounded question: given an operational target behavior, can a search procedure recover (1) minimal sufficient configurations, (2) functional substitutions, and (3) monotone appearance/disappearance boundaries under a fixed query budget?
+## In one minute
 
-## Status
+**Question.** Given a target behavior in an artificial ecology, can a bounded search procedure recover (1) minimal sufficient configurations, (2) functional substitutions, and (3) appearance/disappearance boundaries without exhaustively testing every possibility?
 
-**Completed / archival research release.** The strongest supported claim is deliberately restricted to a bounded **monotone/factorizable minimal-condition** problem class. Broad non-monotone generalization was tested and **not confirmed**.
+**Main result.** In the final frozen METHOD-6 evaluation, MEES achieved mean minimal-set F1 = **0.9669**, mean substitution F1 = **0.9800**, and mean classification F1 = **0.9807**, within a 180-query budget. A separate EXT-3 structural bridge also produced strong results on a derived causal-shielding task.
 
-This repository was reconstructed from the surviving `Experiment_02.zip` project archive. It preserves the frozen algorithm files that remain in that archive, key preregistration/freeze records, final result summaries, negative evidence, publication audits, and provenance documentation.
+**What survived scrutiny.** The strongest supported claim is deliberately narrow: MEES performed well on the tested **monotone/factorizable minimal-condition** problem class.
+
+**What did not survive.** Broad non-monotone generalization was tested and **not confirmed**. Earlier METHOD-3/4/5 stages and EXT-1/EXT-2 failures are retained rather than discarded.
+
+**Status.** Completed / archival research release. No novelty claim is required for interpreting the reported result.
+
+This repository was reconstructed from the surviving `Experiment_02.zip` project archive. It preserves the available frozen algorithm files, key preregistration/freeze records, final result summaries, negative evidence, publication audits, and provenance documentation.
 
 ## Main results
 
