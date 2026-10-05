@@ -29,6 +29,8 @@ The final frozen METHOD-6 evaluation reports:
 | Mean queries | 159.5 / 180 budget |
 | Structural advantage vs. strongest tested baseline | 0.1587 |
 
+**Baseline-comparison guardrail:** the `0.1587` value is the measured advantage over the **specific preserved baseline implementations**, not an isolated estimate of the search procedure alone. METHOD-6 exploits the known monotone/factorizable structure, while the random-sampling and active-learning baselines use different structural assumptions. An equally informed structured baseline could change the comparison. The zero boundary MAE is likewise exact on the evaluated discretized phase grid, not evidence of economical inference of an unobserved continuous boundary. See `docs/METHOD6_BASELINE_INTERPRETATION_2026-10-05.md`.
+
 The final external structural bridge, EXT-3, reports:
 
 | Metric | Result |
