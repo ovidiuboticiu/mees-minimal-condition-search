@@ -74,7 +74,9 @@ See `evidence/MEES_Manuscript_Release_v1.0.json`.
 - `scripts/` — lightweight evidence checks for this reconstructed repository.
 - `PROVENANCE.md` and `REPRODUCIBILITY.md` — what is preserved, what is missing, and what can honestly be verified.
 
-## Verification
+## Preserved-result consistency check
+
+The public `scripts/check_key_results.py` script is a **consistency check over preserved analysis JSON files**. It verifies that the archived PASS/FAIL verdicts and headline metrics match the values reported in this README. It does **not** recompute METHOD-6 or EXT-3 from raw historical inputs and is not an independent reproduction.
 
 Install the minimal Python dependencies if you want to inspect/compile the frozen source:
 
@@ -82,7 +84,7 @@ Install the minimal Python dependencies if you want to inspect/compile the froze
 pip install -r requirements.txt
 ```
 
-Check the preserved headline evidence:
+Check the preserved headline evidence for internal consistency:
 
 ```bash
 python scripts/check_key_results.py
