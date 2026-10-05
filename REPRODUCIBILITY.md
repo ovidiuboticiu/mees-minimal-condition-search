@@ -4,7 +4,7 @@
 
 The reconstructed repository contains the surviving frozen implementations, key pre-specified protocols, result summaries for the final methodological sequence, EXT-3 external-bridge evidence, and the historical builder-side validation report.
 
-Repository-level checks added during reconstruction verify the frozen PASS/FAIL verdicts and headline metrics and allow syntax checking of the surviving Python source files.
+Repository-level checks added during reconstruction verify the frozen PASS/FAIL verdicts and headline metrics and allow syntax checking of the surviving Python source files. These checks read the preserved analysis outputs; they are **not a recomputation from raw historical inputs**.
 
 ## What cannot be honestly claimed from the surviving archive
 
