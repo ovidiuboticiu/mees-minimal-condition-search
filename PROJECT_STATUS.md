@@ -8,4 +8,4 @@
 - **License:** MIT.
 - **Citation metadata:** available in `CITATION.cff`.
 - **Persistent DOI:** not assigned and not required for this GitHub archival release.
-- **Publication state:** repository content finalized and ready to be switched from private to public by the owner.
+- **Publication state:** public archival repository; content finalized.
